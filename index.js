@@ -31,6 +31,9 @@ function install(app, base) {
 
     respond( res, function () {
       return new Promise( function ( resolve ) {
+        if ( req.body ) {
+          options.body = req.body;
+        }
         resolve( phpApi( req.params.host, req.query, options, req.session ) )
       } );
     } );
@@ -41,6 +44,9 @@ function install(app, base) {
     var options = req.method === 'GET' ? {} : { method: req.method };
     respond( res, function () {
       return new Promise( function ( resolve ) {
+        if ( req.body ) {
+          options.body = req.body;
+        }
         resolve( restApi( req.params[0], req.params[1], options ) )
       } );
     } );
