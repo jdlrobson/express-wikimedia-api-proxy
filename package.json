@@ -1,7 +1,7 @@
 {
   "name": "express-wikimedia-api-proxy",
   "description": "Proxy Wikimedia apis in your express app",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "devDependencies": {
     "express": "^4.14.0",
     "oauth-fetch-json": "^0.3.2"
