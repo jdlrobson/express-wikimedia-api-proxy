@@ -2,6 +2,10 @@
   "name": "express-wikimedia-api-proxy",
   "description": "Proxy Wikimedia apis in your express app",
   "version": "1.0.9",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jdlrobson/express-wikimedia-api-proxy"
+  },
   "devDependencies": {
     "express": "^4.14.0",
     "oauth-fetch-json": "^0.3.2"
