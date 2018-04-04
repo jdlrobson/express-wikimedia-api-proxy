@@ -22,7 +22,7 @@ function respond( res, method ) {
   } );
 }
 
-function install(app, base) {
+function install(app, base, doNotFlattenResponses) {
   base = base || '/api/wikimedia/';
 
   // expose php api
@@ -34,7 +34,7 @@ function install(app, base) {
         if ( req.body ) {
           options.body = req.body;
         }
-        resolve( phpApi( req.params.host, req.query, options, req.session ) )
+        resolve( phpApi( req.params.host, req.query, options, req.session, doNotFlattenResponses ) )
       } );
     } );
   } );

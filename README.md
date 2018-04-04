@@ -15,13 +15,16 @@ will be available in your web app for all languages and projects.
 
 ## how to use!
 ```
+  const express = require('express');
   const wikiApis = require('express-wikimedia-api-proxy');
   const app = express();
+  const cors = require('cors');
   const PORT = app.get( 'port' ) || 8145;
 
   const base = '/api/wikimedia/';
 
-  wikiApis(app, base);
+  wikiApis(app, base, true);
+  app.use(cors())
   app.listen(PORT)
   console.log('The APIs are exposed at port:', PORT)
   console.log('http://localhost:' + PORT + base + 'en.wikipedia.org/api.php');
