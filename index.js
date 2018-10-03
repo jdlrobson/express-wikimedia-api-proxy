@@ -31,10 +31,11 @@ function install(app, base, doNotFlattenResponses) {
 
     respond( res, function () {
       return new Promise( function ( resolve ) {
+        let query = req.query;
         if ( req.body ) {
-          options.body = req.body;
+          query = Object.assign( {}, query, req.body);
         }
-        resolve( phpApi( req.params.host, req.query, options, req.session, doNotFlattenResponses ) )
+        resolve( phpApi( req.params.host, query, options, req.user, doNotFlattenResponses ) )
       } );
     } );
   } );
