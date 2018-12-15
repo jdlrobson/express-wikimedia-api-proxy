@@ -48,7 +48,7 @@ function install(app, base, doNotFlattenResponses) {
         if ( req.body ) {
           options.body = req.body;
         }
-        resolve( restApi( req.params[0], req.params[1], options ) )
+        resolve( restApi( req.params[0], req.url.split( 'rest_v1/' )[ 1 ], options ) )
       } );
     } );
   } );
